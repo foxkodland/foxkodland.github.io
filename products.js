@@ -120,12 +120,12 @@ const data = [
         image: "гиппоа.png",
         composition: "гидролизованный говяжий белок - 20%, дегидрированное мясо индейки - 10%, пшеница, кукуруза, жир индейки, растительные волокна, гидролизованные белки животного происхождения, цельное семя льна, автолизат пивных дрожжей (натуральный источник МОС), масло лососевых рыб, DL-метионин, таурин, топинамбур (натуральный источник ФОС и инулина), витамины и минералы.",
         category: "cats",
-        types: "стерилизованные",
         description: "Сухой полнорационный корм для стерилизованных кошек - гипоаллергенный",
         info: ["Гипоаллергенные белки массов до 80 кДа", "Жир индейки", "Пребиотики MOS и FOS", "Нормализация pH мочи кошки"],
         theme: "blue",
         vkus: "говядина",
         label: "гипоаллергенный",
+        types: "гипоаллергенный",
         weight: 0.4,
         _weight_list: [0.4, 1.5, 10],
         nutritional_value: [
@@ -694,7 +694,6 @@ const get_index = () => {
     return count
 }
 
-
 export const products = data.flatMap((item, index) =>
     item._weight_list.map((w, index2) => ({
         ...item,
@@ -704,5 +703,3 @@ export const products = data.flatMap((item, index) =>
         image: get_image_link(item.category, w, item.image)
     }))
 );
-
-console.log(products);
